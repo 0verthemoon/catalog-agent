@@ -1,0 +1,9 @@
+{
+  "name": "@ai-catalog/agent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.ts",
+    "build": "bun build --target=bun --outdir=dist src/index.ts"
+  }
+}

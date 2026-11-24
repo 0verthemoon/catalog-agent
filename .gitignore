@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.cache/
+*.tsbuildinfo
+*.log
+
+.env
+.env.*
+!.env.example
+.npmrc
+.pgpass
+pgpass.conf
+
+/backend/backend
+*.exe

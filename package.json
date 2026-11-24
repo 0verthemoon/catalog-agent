@@ -1,0 +1,28 @@
+{
+  "name": "ai-catalog",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "agent"
+  ],
+  "scripts": {
+    "dev": "bun run --cwd frontend dev",
+    "agent": "bun run --cwd agent start",
+    "build": "bun run --cwd frontend build && bun run --cwd agent build",
+    "lint": "oxlint --deny-warnings frontend agent",
+    "lint:fix": "bun run lint --fix",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "typecheck": "tsc -p frontend && tsc -p frontend/tsconfig.test.json && tsc -p agent",
+    "test": "bun test ./frontend ./agent",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
+    "fix": "bun run lint:fix && bun run format"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.5",
+    "oxfmt": "0.80.0",
+    "oxlint": "1.95.0",
+    "typescript": "7.0.2"
+  },
+  "packageManager": "bun@1.4.5"
+}
